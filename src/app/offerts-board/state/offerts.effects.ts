@@ -13,7 +13,9 @@ export class OffertsEffects {
       ofType(OffertsActions.load),
       mergeMap(() =>
         this.service.getOfferts().pipe(
-          map((offerts) => OffertsActions.loaddSuccess({ offerts })),
+          map((offerts) => {
+            return OffertsActions.loaddSuccess({ offerts });
+          }),
           catchError(() => EMPTY)
         )
       )

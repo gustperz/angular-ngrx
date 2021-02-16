@@ -19,8 +19,8 @@ export class DataApiService {
   parseOffer(rawOffer: any): Offer {
     const version = rawOffer.versions[0];
 
-    const characteristics: Characteristic[] = version.characteristics.map(
-      (characteristic) => {
+    const characteristics: Characteristic[] =
+      version.characteristics?.map((characteristic) => {
         const characteristicVersion = characteristic.versions[0];
 
         return <Characteristic>{
@@ -28,11 +28,10 @@ export class DataApiService {
           versionId: characteristicVersion.id,
           name: characteristicVersion.name,
         };
-      }
-    );
+      }) ?? [];
 
-    const productOfferingPrices: Price[] = version.productOfferingPrices.map(
-      (price) => {
+    const productOfferingPrices: Price[] =
+      version.productOfferingPrices?.map((price) => {
         const priceVersion = price.versions[0];
 
         return <Price>{
@@ -40,8 +39,7 @@ export class DataApiService {
           amount: priceVersion.price.amount,
           units: priceVersion.price.units.code,
         };
-      }
-    );
+      }) ?? [];
 
     return {
       id: rawOffer.id,
