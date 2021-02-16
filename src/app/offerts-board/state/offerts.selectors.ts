@@ -18,6 +18,6 @@ export const getOfferts = createSelector(getOffertsState, (state: State) =>
   selectAll(state)
 );
 
-export const getOffert = createSelector(getOffertsState, (state: State) => {
-  return selectEntities[state.selectedId];
+export const getCurrentOffert = createSelector(getOffertsState, (state: State) => {
+  return selectEntities(state)[state.selectedId];
 });
