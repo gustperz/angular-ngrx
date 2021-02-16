@@ -6,22 +6,28 @@ svg#clouds {
   width: 1920px;
 }
 
-.content {
+.container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 1200px;
   padding: 10%;
-  max-height: 100%;
+  height: 100%;
+  box-sizing: border-box;
 
   @media (max-width: 640px) {
     padding: 20px;
   }
 }
 
-.row {
+.head {
   display: flex;
   justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  overflow: hidden;
 }
 
 app-characteristics {
