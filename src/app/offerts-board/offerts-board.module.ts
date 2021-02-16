@@ -4,6 +4,8 @@ import { OfferComponent } from './components/offer/offer.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { PricesComponent } from './components/prices/prices.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { StoreModule } from '@ngrx/store';
+import * as fromState from './state/offerts.reducer';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     PricesComponent,
     DashboardComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    StoreModule.forFeature(fromState.FEATURE_KEY, fromState.reducer),
+  ],
 })
 export class OffertsBoardModule {}
