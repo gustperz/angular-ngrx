@@ -26,8 +26,7 @@ const offertsReducer = createReducer(
     return offertsAdapter.setAll(offerts, state);
   }),
   on(Actions.setCurrentOffer, (state, { offerId }) => {
-    state.selectedId = offerId;
-    return state;
+    return { ...state, selectedId: offerId };
   })
 );
 
