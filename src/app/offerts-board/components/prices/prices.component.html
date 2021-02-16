@@ -1,1 +1,9 @@
-<p>prices works!</p>
+<mat-list role="list">
+  <div mat-subheader>Precios</div>
+  <mat-list-item *ngFor="let price of prices" role="listitem">
+    <div class="price-item">
+      <p>{{ price.name }}</p>
+      <p>{{ price.amount | currency }}</p>
+    </div>
+  </mat-list-item>
+</mat-list>

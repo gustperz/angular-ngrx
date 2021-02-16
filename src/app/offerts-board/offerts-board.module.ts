@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import * as fromState from './state/offerts.reducer';
 import { OffertsEffects } from './state/offerts.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularMaterialModule } from '../angular-material.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     StoreModule.forFeature(fromState.FEATURE_KEY, fromState.reducer),
     EffectsModule.forFeature([OffertsEffects]),
+    AngularMaterialModule,
+  ],
+  exports: [
+    OfferComponent,
+    CharacteristicsComponent,
+    PricesComponent,
+    DashboardComponent,
   ],
 })
 export class OffertsBoardModule {}

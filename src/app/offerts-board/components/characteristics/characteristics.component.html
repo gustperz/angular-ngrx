@@ -1,1 +1,8 @@
-<p>characteristics works!</p>
+<mat-list role="list">
+  <div mat-subheader>Caracteristicas</div>
+  <mat-list-item
+    *ngFor="let characteristic of characteristics"
+    role="listitem"
+    >{{ characteristic.name }}</mat-list-item
+  >
+</mat-list>
